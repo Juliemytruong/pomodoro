@@ -12,6 +12,8 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
+def start_timer():
+  return()
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
@@ -31,6 +33,12 @@ labelA = Label(text="Timer",font=(FONT_NAME,50,"bold"))
 labelA.config(bg=YELLOW,fg=GREEN)
 labelA.grid(column=2, row=1)
 
+labelB = Label(text="✔",font=(FONT_NAME,20,"bold"))
+labelB.config(bg=YELLOW,fg=GREEN)
+labelB.grid(column=2, row=5)
+
+button_start = Button(text="start", command=start_timer)
+button_start.grid(column=1,row=5)
 
 
 
