@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import *
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -24,9 +25,11 @@ canvas=Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 tomato_img=PhotoImage(file="tomato.png")
 canvas.create_image(100,112,image=tomato_img)
 canvas.create_text(100,130,text="00:00",fill="white",font=(FONT_NAME,35,"bold"))
-canvas.pack()
+canvas.grid(row=2,column=2)
 
-
+labelA = Label(text="Timer",font=(FONT_NAME,50,"bold"))
+labelA.config(bg=YELLOW,fg=GREEN)
+labelA.grid(column=2, row=1)
 
 
 
