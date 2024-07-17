@@ -42,5 +42,4 @@ button_start.grid(column=1,row=5)
 
 
 
-
 window.mainloop()
