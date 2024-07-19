@@ -11,11 +11,26 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 
+reps=0
+
 # ---------------------------- TIMER RESET ------------------------------- #
 
 def start_timer():
-  count_down(20)
+  global reps
+  work_sec=WORK_MIN*60
+  short_break_sec=SHORT_BREAK_MIN*60
+  long_break_sec=LONG_BREAK_MIN*60
 
+  print(work_sec)
+
+
+  if reps%2!=0:
+    print(reps)
+    count_down(work_sec)
+  elif reps%2==0 and reps%8==0:
+    count_down(long_break_sec)
+  else:
+    count_down(short_break_sec)
 
 
 def restart_timer():
@@ -29,7 +44,6 @@ def count_down(count):
 
   if display_sec<10:
     display_sec=f"0{display_sec}"
-
 
   canvas.itemconfig(timer_text,text=f"{display}:{display_sec}")
   if count>0:
