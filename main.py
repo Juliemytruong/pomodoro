@@ -14,7 +14,7 @@ LONG_BREAK_MIN = 20
 # ---------------------------- TIMER RESET ------------------------------- #
 
 def start_timer():
-  count_down(5*60)
+  count_down(20)
 
 
 
@@ -26,6 +26,11 @@ def restart_timer():
 def count_down(count):
   display=math.floor(count/60)
   display_sec=count%60
+
+  if display_sec<10:
+    display_sec=f"0{display_sec}"
+
+
   canvas.itemconfig(timer_text,text=f"{display}:{display_sec}")
   if count>0:
     window.after(1000,count_down,count-1)
